@@ -12,7 +12,7 @@
       <th>More Info</th>
     </tr>
   </thead>
-  <%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
+  <%= form_tag movies_path(:sort=> session[:sort]), method: :get, id: 'ratings_form' do %>
   Include:
   <% @all_ratings.each do |rating| %>
     <div class="form-check  form-check-inline">

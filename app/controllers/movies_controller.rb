@@ -25,6 +25,10 @@ class MoviesController < ApplicationController
       @ratings_to_show = []
     else
       @ratings_to_show = params[:ratings].keys
+      session[:ratings] = @ratings_to_show
+    end
+    if params[:sort] == nil
+      column = session[:sort]
     end
     @movies = Movie.with_ratings(@ratings_to_show, column)
     
