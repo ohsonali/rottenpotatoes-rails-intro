@@ -15,7 +15,6 @@ class MoviesController < ApplicationController
       @ratings_to_show = params[:ratings].keys
     end
     @with_ratings = Movie.with_ratings(@ratings_to_show)
-    flash[:notice] = "#{params[:ratings]}"
     
   end
 
